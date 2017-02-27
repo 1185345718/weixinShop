@@ -1,0 +1,79 @@
+
+<!doctype html>
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="Keywords" content="" />
+    <meta name="Description" content="" />
+    <title>我的订单</title>
+    <script src="js/zepto.js"></script>
+</head>
+<style>
+    /*css reset*/
+    body{ min-width:320px; font: normal normal 12px/150% "微软雅黑"; color:#d8d8d8; -webkit-text-size-adjust: none;-webkit-user-select: none; background-color: #fbf9fe;}
+    body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0}
+    ul,ol{list-style:none}
+    a,a:visited,a:hover{text-decoration:none;color:#757575}
+    img{vertical-align:middle;border:0;}
+    button,input,select,textarea{vertical-align:middle;outline:none;resize:none;font:normal normal 14px/14px "微软雅黑";}
+    table{border-collapse:collapse;border-spacing:0;}
+    i,em{font-style:normal;}
+    img{vertical-align:middle;border:0;-ms-interpolation-mode:bicubic}
+    button,input,select,textarea{font-size:100%; vertical-align:middle;outline:none;-webkit-appearance:none;}
+    table{border-collapse:collapse;border-spacing:0}
+    textarea{resize:none}
+    input::-webkit-input-placeholder {color:#c7c7c7;}
+
+    /*主样式*/
+    .successPic {width:25%; margin:0 auto; margin-top:33px;}
+    .successPic img { width:100%;}
+    .status { font-size:16px; color:#000; text-align:center; margin-top:25px; line-height:180%;}
+    .hint { font-size:12px; color:#767679; text-align:center;}
+    .confirm,.cancel {width:94%; background-color:#04be01; font-size:15px; color:#fff; line-height:35px; border:0; border-radius:6px; margin-left:2.5%; margin-top:25px; margin-bottom:10px; border:1px solid #00a200;}
+    .cancel { background: #f7f7f7; color:#272727; border:1px solid #e6e5e7; margin-top:0;}
+
+    @media (min-width:321px) and (max-width:360px)  {
+        .successPic {margin-top:37px;}
+        .status { font-size:18px; margin-top:28px; }
+        .hint { font-size:13px;}
+        .confirm,.cancel {font-size:17px; line-height:39.5px; border-radius:7px; margin-top:28px; margin-bottom:11.5px;}
+        .cancel {margin-top:0;}
+    }
+
+    @media (min-width:321px) and (max-width:375px)  {
+        .successPic {margin-top:38px;}
+        .status { font-size:19px; margin-top:29px; }
+        .hint { font-size:14px;}
+        .confirm,.cancel {font-size:17.5px; line-height:41px; border-radius:7px; margin-top:29px; margin-bottom:11.5px;}
+        .cancel {margin-top:0;}
+    }
+
+    @media (min-width:376px) and (max-width:9999px)  {
+        .successPic {margin-top:42px;}
+        .status { font-size:20px; margin-top:32px; }
+        .hint { font-size:15px;}
+        .confirm,.cancel {font-size:19.5px; line-height:45.5px; border-radius:8px; margin-top:32px; margin-bottom:13px;}
+        .cancel {margin-top:0;}
+    }
+</style>
+<body>
+<div class="successPic"><img src="image/success.png" alt=""></div>
+<div class="status">操作成功</div>
+<div class="hint">订单提交成功，请等待商家确认</div>
+
+<input type="button" value="确定" class="confirm">
+<!--<input type="button" value="取消" class="cancel">-->
+</body>
+<script>
+var url = 'index.html';
+$(".confirm").click(function(){
+    if(url !== ''){
+        window.location.href = url;
+    }else{
+        window.history.back(-1);
+    }
+});
+</script>
+</html>

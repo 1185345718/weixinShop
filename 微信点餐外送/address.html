@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="description" content="点餐外送">
+    <meta name="keywords" content="点餐外送">
+    <script src="js/rem.js"></script>
+    <script src="js/jquery-1.8.3.min.js"></script>
+
+    <title>点餐外送</title>
+    <style>
+        a:link, a:visited{ color:#fff; text-decoration:none;}
+        a:hover{ color:#fff; text-decoration:none;}
+        a { outline:none; star:expression(this.onFocus=this.blur());}
+        .top-title{
+            color: white;
+            background-color: #2d2d2d;
+            overflow: hidden;
+            height: 1.8rem;
+            line-height: 1.8rem;
+            border-bottom: 1px solid rgb(127, 110, 110);
+        }
+        .top-title span{
+            position: absolute;
+        }
+        .top-title p{
+            text-align: center;
+            font-size: 16px;
+        }
+        img{
+            width: 100%;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+            font-style: normal;
+        }
+        input[type="text"]{
+            -webkit-appearance:none;
+            border: none;
+            outline:none;
+            height: inherit;
+        }
+
+        body{
+            background-color: #F2EFF5;
+            font-family: "Microsoft YaHei", Verdana, Arial, sans-serif, "Times New Roman", 宋体;
+        }
+        .address{
+            /*background-color: #FFFFFF;*/
+
+          height: 100%;
+            overflow: hidden;
+        }
+        .address {
+            overflow: hidden;
+        }
+        .address li{
+            height: 3.4rem;
+            background-color: #FFFFFF;
+            margin-bottom: 0.4rem;
+            padding: 0.4rem 0.6rem;
+        }
+        .address li div:nth-child(1){
+            line-height: 1.2rem;
+            border-bottom: 1px solid #ccc;
+        }
+        .address li div:nth-child(1) span{
+          margin-right: 0.2rem;
+        }
+        .added{
+            width: 100%;
+            text-align: center;
+            line-height: 2rem;
+            height: 2rem;
+            background-color: #FFFFFF;
+            position: fixed;
+            bottom: 0;
+        }
+        .addform{
+            width: 100%;
+            position: relative;
+            z-index: 1;
+            background: #FFFFFF;
+            margin-bottom:0.8rem;
+        }
+        .addform div{
+            height: 2rem;line-height: 2rem;
+            padding: 0 0.4rem;
+            border-bottom: 1px solid #F2EFF5;
+        }
+        .btn{
+            width: 80%;
+            height: 1.4rem;
+            text-align: center;
+            margin:0 auto;display:block;
+            border-radius: 0.2rem;
+            background-color: #ffeb64;
+            border: none;
+            margin-bottom: 0.6rem;
+        }
+        .btn1{
+            width: 80%;
+            height: 1.4rem;
+            text-align: center;
+            margin:0 auto;display:block;
+            border-radius: 0.2rem;
+            background-color: #2bcd04;
+            border: none;
+        }
+        .addform  input[type="radio"]{
+
+        }
+        .addform div:nth-child(2) span{
+            margin-right: 0.6rem;
+        }
+        #addform{
+            display: none;
+        }
+        .label{
+            float: left;
+            display: block;
+
+        }
+        .choice{
+            line-height: 1.2rem;
+            overflow: hidden;
+        }
+        .choice input{
+            display: block;
+            float: left;
+            margin-top: 0.2rem;
+            font-size: 16px;
+            width: 0.8rem;
+            height:0.8rem;
+        }
+        .choice span{
+            display: block;
+            width: 2rem;
+            float: right;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body>
+<div class="top-title"><span><a href="order.html"><返回</a></span><p>管理收货地址</p></div>
+<div class="address">
+    <ul>
+        <li>
+           <div><span class="name">老王</span><span class="sex">先生</span><span class="phone">13825877649</span><br/><span class="site">富亿中心b座1802室</span></div>
+            <div class="choice">
+                <input type="radio" id="addres" name="addres" /> <label class="label" for="addres">使用此地址</label>  <span class="delete">删除</span><span class="edit">编辑</span>
+            </div>
+        </li>
+        <li>
+            <div><span class="name">小王</span><span class="sex">先生</span><span class="phone">13825877649</span><br/><span class="site">富亿中心b座1802室</span></div>
+            <div class="choice">
+                <input type="radio" id="addres1" name="addres" /> <label class="label" for="addres1">使用此地址</label>  <span class="delete">删除</span><span class="edit">编辑</span>
+            </div>
+        </li>
+    </ul>
+</div>
+<div class="added">新增收货地址</div>
+<form id="addform">
+    <div class="addform">
+            <div>联系人 <input id="name" type="text" placeholder="您的姓名"/></div>
+            <div>性别：<span><input id="male" type="radio" name="sex" value="male"/><label style="margin-left: 0.4rem" name="male" for="male">先生</label></span><input id="female" type="radio" name="sex"/><label style="margin-left: 0.4rem" name="female" for="female">女士</label></div>
+            <div>手机号码 <input id="phone" type="text"/></div>
+            <div>收货地址 <input id="site" type="text"placeholder="小区/街道/大厦/学校名称"/></div>
+            <div><input style=" text-align:center; width: 100%;" type="text"placeholder="详细楼号/门牌号等"/> </div>
+    </div>
+<input class="btn" type="submit" value="确定"/>
+
+</form>
+<script>
+    $(".added").click(function(){
+        $("#addform").show();
+        $(".address").hide();
+        $(this).hide();
+    })
+    $(".address").on("click",".edit",function(){
+        var message=$(this).parent().prev();
+        var name=message.find(".name").text();
+        var sex=message.find(".sex").text();
+        var phone=message.find(".phone").text();
+        var site=message.find(".site").text();
+        text='<input class="btn1" type="submit" value="删除"/>';
+        $("#addform").append(text);
+        $("#addform").show();
+        $(".address").hide();
+        $("#addform").find("#name").val(name);
+//        $("#addform").find("#name").val(name);
+        $("#addform").find("#phone").val(phone);
+        $("#addform").find("#site").val(site)
+    });
+    $(".address").on("click","delete",function(){
+
+    });
+
+</script>
+</body>
+</html>
