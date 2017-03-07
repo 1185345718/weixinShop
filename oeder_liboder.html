@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="description" content="点餐外送">
+    <meta name="keywords" content="点餐外送">
+    <title>订单详情</title>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/rem.js"></script>
+    <script src="js/vue.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            font-style: normal;
+            list-style: none;
+            font-family: "Microsoft YaHei", Verdana, Arial, sans-serif, "Times New Roman", 宋体;
+        }
+        body{
+            background-color:#efeded;
+            font-size: 16px;
+        }
+        i{
+            color: #ff8205;
+        }
+        .shop_title{
+            background-color: #FFFFFF;
+            padding: 0 0.4rem;
+            height: 2rem;
+            line-height: 2rem;font-size: 0.6rem;
+            border-bottom: 1px solid #ccc;
+        }
+        .shop_title span{
+            margin-right: 0;
+            margin-left:6rem;
+            padding: 0.1rem 0.2rem;
+            border-radius: 6px;
+            color: #18a8e1;
+        }
+        .shop{
+            background-color: #FFFFFF;
+        }
+        .shop li{
+            list-style: none;
+            padding: 0.4rem 0.4rem;
+            overflow: hidden;
+        }
+        .shop li img{
+            width: 2.6rem;
+            height:2.6rem;
+           float: left;
+        }
+        .shop li span:nth-child(2){
+            margin-left: 0.8rem;
+            margin-right:2.8rem;
+            display: block;
+            height: 2.6rem;
+            line-height: 1.2rem;
+            float: left;
+        }
+        .shop li span:nth-child(3){
+            display: block;
+            height: 2.6rem;
+            line-height:3.6rem;
+            float: left;
+        }
+        .shop li span:nth-child(4){
+            display: block;
+            height: 2.6rem;
+            line-height: 3.6rem;
+            float:right;
+        }
+        .total{
+            height: 3rem;
+            padding: 0.2rem 0;
+            background-color: #FFFFFF;
+            border-top: 1px solid #ccc;
+        }
+        .total div:nth-child(1){
+            height: 1.4rem;
+            line-height: 1.4rem;
+        }
+        .total div:nth-child(1) span:nth-child(1){
+          padding-right: 2rem;
+            margin-left: 0.2rem;
+        }
+        .total div:nth-child(2){
+            padding: 0 0.3rem;
+            height: 1.4rem;
+            line-height: 1.4rem;
+        }
+        .total div:nth-child(2) span{
+            float: right;
+            height: 1rem;
+            line-height: 1rem;
+            margin-top: 0.2rem;
+            border: 1px solid #2de104;
+            padding: 0 0.2rem;
+            border-radius: 6px;
+            color: #2de104;
+        }
+
+        .total div:nth-child(1) span:nth-child(3){
+            height: 1rem;
+            line-height: 1rem;
+            margin-right: 0.4rem;
+            float: right;
+            border:1px solid #2de104;
+            padding: 0 0.2rem;
+            border-radius: 6px;
+            color: #2de104;
+        }
+        .box{
+            margin-top: 0.3rem;
+        }
+        .details{
+        background-color: #FFFFFF;
+            padding: 0.4rem 0.2rem;
+        }
+        .details li{
+            overflow: hidden;
+            height: 1.4rem;
+            line-height: 1.4rem;
+        }
+        .details li span:nth-child(1){
+            float: left;
+            color: #b3b3b3;
+        }
+        .details li span:nth-child(2){
+            float: right;
+        }
+        .remarks{
+            padding: 0 0.2rem;
+            border-top: 1px solid #ccc;
+            height: 2.2rem;
+            line-height: 2.2rem;
+            background-color: #FFFFFF;
+        }
+        .remarks span{
+            color: #b3b3b3;
+        }
+        .added{
+            width: 100%;
+            text-align: center;
+            line-height: 2rem;
+            height: 2rem;
+            color: #FFFFFF;
+            background-color:  #ff6633;
+            position: fixed;
+            bottom: 0;
+        }
+        @media only screen and (max-width: 320px) {
+            .total div:nth-child(2) span{
+                float: right;
+                height: 1rem;
+                line-height: 1rem;
+                margin-top: 0.2rem;
+                border: 1px solid #2de104;
+                padding: 0 0.2rem;
+                border-radius: 6px;
+                color: #2de104;
+            }
+
+            .total div:nth-child(1) span:nth-child(3){
+                height: 1rem;
+                line-height: 1rem;
+                margin-right: 0.4rem;
+                float: right;
+                border:1px solid #2de104;
+                padding: 0 0.2rem;
+                border-radius: 6px;
+                color: #2de104;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="shop_title">客无忧 （机场路店）<span>待支付</span></div>
+<div>
+    <ul class="shop">
+        <li>
+            <img src="image/kwy.png" alt=""/>
+            <span>香飘飘奶茶 <br/> <i>￥15</i></span>
+            <span>X1</span>
+            <span>总价 <i>￥15</i></span>
+        </li>
+
+    </ul>
+</div>
+<div class="total">
+    <div><span>配送费&nbsp;&nbsp; ￥10</span><span>优惠&nbsp;&nbsp; -￥5</span> <span>去支付</span></div>
+    <div>&nbsp;合计&nbsp; &nbsp;&nbsp;<i>￥15</i> <span>取消订单</span></div>
+</div>
+<div class="box">
+    <ul class="details">
+        <li><span>订单编号</span><span>13312156456445</span></li>
+        <li><span>下单时间</span><span>2017/2/23/12:02</span></li>
+        <li><span>支付状态</span><span>已完成</span></li>
+        <li><span>支付方式</span><span>在线支付</span></li>
+    </ul>
+    <div class="remarks"><span>备注：</span>啦啦啦啦啦啦啦</div>
+</div>
+<div class="added">返回订单列表</div>
+</body>
+</html>

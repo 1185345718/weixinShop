@@ -11,227 +11,14 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="description" content="点餐外送">
     <meta name="keywords" content="点餐外送">
-    <script src="js/rem.js"></script>
     <title>立即下单</title>
-    <style>
-        a:link, a:visited{ color:#fff; text-decoration:none;}
-        a:hover{ color:#fff; text-decoration:none;}
-
-        /* 去掉链接的虚线框 */
-        a { outline:none; star:expression(this.onFocus=this.blur());}
-        .top-title{
-            color: white;
-            background-color: #2d2d2d;
-            overflow: hidden;
-            height: 1.8rem;
-            line-height: 1.8rem;
-            border-bottom: 1px solid rgb(127, 110, 110);
-        }
-        .top-title span{
-            position: absolute;
-        }
-        .top-title p{
-            text-align: center;
-            font-size: 16px;
-        }
-        *{
-            margin: 0;
-            padding: 0;
-            text-decoration: none;
-            list-style: none;
-            font-style: normal;
-        }
-        input{
-            -webkit-appearance:none;
-            border: none;
-        }
-
-        body{
-            background-color: #F2EFF5;
-            font-family: "Microsoft YaHei", Verdana, Arial, sans-serif, "Times New Roman", 宋体;
-        }
-        .address{
-            padding: 0.4rem 0.6rem;
-            height: 4.2rem;
-            background-color: #FFFFFF;
-            overflow: hidden;
-        }
-        .address li{
-            width: 100%;
-            overflow: hidden;
-            border-bottom: 1px solid #ccc;
-        }
-        .address li a{
-            display: block;
-            color: #000000;
-            overflow: hidden;
-        }
-        .address div:nth-child(1){
-            float: left;line-height: 1rem;
-           height: 2.2rem;
-        }
-        .address div:nth-child(2){
-            float: right;
-            font-size: 1rem;
-            height: 2.2rem;
-        }
-        .time{
-            height: 2rem;
-            line-height: 2rem;
-            border-bottom: none !important;
-        }
-        .time span:nth-child(1){
-            float: left;
-        }
-        .time span:nth-child(2){
-            float: right;
-        }
-        .coupon{
-            background-color: #FFFFFF;
-            height: 3.6rem;
-            margin-top: 0.4rem;
-            overflow: hidden;
-            padding: 0.2rem 0.6rem;
-        }
-        .coupon div:nth-child(1){
-            line-height: 1.8rem;
-            height: 1.8rem;
-        }
-        .coupon div:nth-child(2){
-            line-height: 1.8rem;
-            height: 1.8rem;
-            border-top: 1px solid #ccc;
-        }
-        .coupon  span:nth-child(1){
-            float: left;
-        }
-        .coupon span:nth-child(2){
-            float: right;
-        }
-        .coupon  span:nth-child(3){
-            float: left;
-        }
-        .coupon span:nth-child(4){
-            float: right;
-        }
-        .repast input{
-            width: 4.8rem;
-            height:1.6rem;
-        }
-        .content{
-            background-color: white;
-            margin-top: 0.4rem;
-            padding: 0.2rem 0.6rem;
-            margin-bottom: 3rem;
-        }
-        .content .c-title{
-            height: 1.6rem;
-            line-height:1.6rem;
-
-        }
-        .order{
-            border-top: 1px solid #ccc;
-            border-bottom: 1px solid #ccc;
-            padding: 0.4rem 0;
-        }
-        .order li{
-            height: 1.2rem;
-        }
-        .order li span:nth-child(2){
-           float: right;
-            width: 7rem;
-            text-align: right;
-        }
-        .order li span:nth-child(2) i{
-            float: left;
-        }
-        .dispatching{
-
-        }
-
-
-        .dispatching{
-            background-color: #FFFFFF;
-            height: 3.2rem;
-            overflow: hidden;
-        }
-        .dispatching div:nth-child(1){
-            line-height: 2rem;
-            height: 2rem;
-        }
-        .dispatching div:nth-child(2){
-            height: 2rem;
-        }
-        .dispatching span:nth-child(1){
-            float: left;
-        }
-        .dispatching span:nth-child(2){
-            float: right;
-        }
-        .porder{
-            background-color: #FFFFFF;
-            border-top: 1px solid #F2EFF5;
-            width: 100%;
-            height: 2.6rem;
-            line-height: 3.2rem;
-            position: fixed;
-            bottom: 0;
-        }
-        .porder button{
-            float: right;
-            background-color: #ffe71e;
-            width:4rem;
-            border: none;
-            border-radius: 5px;
-            height:1.6rem;
-            margin-top: 0.6rem;
-            margin-right: 0.4rem;
-        }
-        .porder span{
-            margin-left: 0.4rem;
-        }
-        .porder span i{color: #ff7d12
-        }
-        .masking{
-            display: none;
-            position: fixed;top: 0;
-            width: 100%;
-            z-index: 9999;
-            height: 100%;
-            background-color:rgba(36, 35, 35, 0.32);;
-        }
-        .masking p{
-            height: 1.2rem;
-            line-height: 1.2rem;
-            text-align: center;
-            background-color: #fff;
-            display: block;
-            width: 100%;
-            margin-top: 1rem;
-            position: absolute;
-            bottom: 0;
-        }
-        #num{
-            text-align: right;
-        }
-        .num{
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            margin-bottom: 2rem;
-        }
-        .num li{
-            width: 100%;
-            height: 1.2rem;
-            line-height: 1.2rem;
-            text-align: center;
-            background-color: #fff;
-            border-bottom: 1px solid #ccc;
-        }
-    </style>
+    <script src="js/jquery-1.8.3.min.js"></script>
+    <script src="js/rem.js"></script>
+    <script src="js/vue.js"></script>
+    <link rel="stylesheet" href="css/order.css"/>
 </head>
 <body>
-<div class="top-title"><span><a href="index.html"><返回</a></span><p>微蜗居</p></div>
+<div id="app">
 <div class="address">
     <ul>
         <li>
@@ -242,7 +29,7 @@
 
         </li>
         <li class="time">
-           <span>送餐时间</span><span>立即送出(大约15分钟)</span>
+            <span>送餐时间</span><span>立即送出(大约15分钟)</span>
         </li>
     </ul>
 
@@ -252,20 +39,18 @@
     <div><span>现金劵/抵用劵/优惠劵</span><span>></span></div>
 </div>
 <div class="repast coupon">
-    <div><span>就餐人数</span><span><input id="num" placeholder="便于商家提供餐具" readonly></span></div>
+    <div><span>就餐人数</span><span><input id="num" placeholder="便于商家提供餐具" readonly value="1"></span></div>
     <div><span>备注</span><input type="text"></div>
 </div>
 <div class="content">
     <div class="c-title">微蜗居</div>
     <div class="order">
         <ul>
-            <li><span>小炒肉</span><span><i>1份</i>￥45</span></li>
-            <li><sapn>土豆丝</sapn><span><i>2份</i>￥35</span></li>
-            <li><sapn>土豆丝</sapn><span><i>2份</i>￥35</span></li>
+            <li v-for="menus in menu" v-if="menus.num>0"><span>{{menus.name}}</span><span><i>{{menus.num}}份</i>￥{{menus.price}}</span></li>
         </ul>
     </div>
     <div class="dispatching">
-        <div><span>餐盒费</span><span>￥6</span></div>
+        <div><span>餐盒费</span><span>￥{{package_total}}</span></div>
         <div class=""><span>配送费</span><span>￥5</span></div>
     </div>
 </div>
@@ -274,17 +59,51 @@
 </div>
 <div class="masking">
     <ul class="num">
-        <li>1人</li>
-        <li>2人</li>
-        <li>3人</li>
-        <li>4人</li>
-        <li>5人</li>
-        <li>6人</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
     </ul>
     <p>取消</p>
 </div>
 
-<script src="js/jquery-1.8.3.min.js"></script>
+</div>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            menu:JSON.parse(localStorage.getItem('shopcar')),
+            carShow:false,
+            shopcar:[],
+        },
+        computed:{
+            // 总打包费
+            package_total:function(){
+                var all = JSON.parse(localStorage.getItem('shopcar'));
+                var total = 0;
+                if(all.length){
+                    $(all).each(function(index, el) {
+                        total += el.num * el.package_price;
+                    });
+                }
+                return total;
+            },
+            total:function(){
+                var all = this.shopcar;
+                var total = 0;
+                if(all.length){
+                    $(all).each(function(index, el) {
+                        total += el.num * el.price;
+                    });
+                }
+                return total;
+            }
+        },
+    });
+</script>
+
 <script>
     $(".porder").on("click","button",function(){
 

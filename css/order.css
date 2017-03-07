@@ -1,0 +1,213 @@
+a:link, a:visited{ color:#fff; text-decoration:none;}
+a:hover{ color:#fff; text-decoration:none;}
+
+/* 去掉链接的虚线框 */
+a { outline:none; star:expression(this.onFocus=this.blur());}
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    font-style: normal;
+}
+input{
+    -webkit-appearance:none;
+    border: none;
+}
+
+body{
+    background-color: #F2EFF5;
+    font-family: "Microsoft YaHei", Verdana, Arial, sans-serif, "Times New Roman", 宋体;
+}
+.address{
+    padding: 0.4rem 0.6rem;
+    height: 4.2rem;
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+.address li{
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 1px solid #ccc;
+}
+.address li a{
+    display: block;
+    color: #000000;
+    overflow: hidden;
+}
+.address div:nth-child(1){
+    float: left;line-height: 1rem;
+    height: 2.2rem;
+}
+.address div:nth-child(2){
+    float: right;
+    font-size: 1rem;
+    height: 2.2rem;
+}
+.time{
+    height: 2rem;
+    line-height: 2rem;
+    border-bottom: none !important;
+}
+.time span:nth-child(1){
+    float: left;
+}
+.time span:nth-child(2){
+    float: right;
+}
+.coupon{
+    background-color: #FFFFFF;
+    height: 3.6rem;
+    margin-top: 0.4rem;
+    overflow: hidden;
+    padding: 0.2rem 0.6rem;
+}
+.coupon div:nth-child(1){
+    line-height: 1.8rem;
+    height: 1.8rem;
+}
+.coupon div:nth-child(2){
+    line-height: 1.8rem;
+    height: 1.8rem;
+    border-top: 1px solid #ccc;
+}
+.coupon  span:nth-child(1){
+    float: left;
+}
+.coupon span:nth-child(2){
+    float: right;
+}
+.coupon  span:nth-child(3){
+    float: left;
+}
+.coupon span:nth-child(4){
+    float: right;
+}
+.repast input{
+    -webkit-appearance:none;
+    border: none;
+    outline: none;
+    text-align: right;
+    width: 10.8rem;
+    float:right;
+    height:1.6rem;
+}
+.content{
+    background-color: white;
+    margin-top: 0.4rem;
+    padding: 0.2rem 0.6rem;
+    margin-bottom: 3rem;
+}
+.content .c-title{
+    height: 1.6rem;
+    line-height:1.6rem;
+
+}
+.order{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 0.4rem 0;
+}
+.order li{
+    height: 1.2rem;
+}
+.order li span{
+    float: left;
+    width: 6rem;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.order li span:nth-child(2){
+    float: right;
+    width: 7rem;
+    text-align: right;
+}
+.order li span:nth-child(2) i{
+    float: left;
+}
+.dispatching{
+
+}
+
+
+.dispatching{
+    background-color: #FFFFFF;
+    height: 3.2rem;
+    overflow: hidden;
+}
+.dispatching div:nth-child(1){
+    line-height: 2rem;
+    height: 2rem;
+}
+.dispatching div:nth-child(2){
+    height: 2rem;
+}
+.dispatching span:nth-child(1){
+    float: left;
+}
+.dispatching span:nth-child(2){
+    float: right;
+}
+.porder{
+    background-color: #FFFFFF;
+    border-top: 1px solid #F2EFF5;
+    width: 100%;
+    height: 2.6rem;
+    line-height: 3.2rem;
+    position: fixed;
+    bottom: 0;
+}
+.porder button{
+    float: right;
+    background-color: #ff6633;
+    color: #FFFFFF;
+    width:4rem;
+    border: none;
+    border-radius: 5px;
+    height:1.6rem;
+    margin-top: 0.6rem;
+    margin-right: 0.4rem;
+}
+.porder span{
+    margin-left: 0.4rem;
+}
+.porder span i{color: #ff7d12
+}
+.masking{
+    display: none;
+    position: fixed;top: 0;
+    width: 100%;
+    z-index: 9999;
+    height: 100%;
+    background-color:rgba(36, 35, 35, 0.32);;
+}
+.masking p{
+    height: 1.2rem;
+    line-height: 1.2rem;
+    text-align: center;
+    background-color: #fff;
+    display: block;
+    width: 100%;
+    margin-top: 1rem;
+    position: absolute;
+    bottom: 0;
+}
+#num{
+    text-align: right;
+}
+.num{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+.num li{
+    width: 100%;
+    height: 1.2rem;
+    line-height: 1.2rem;
+    text-align: center;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
